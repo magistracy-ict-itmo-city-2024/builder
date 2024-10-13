@@ -12,7 +12,7 @@ Execute
 make build
 ```
 
-It will build docker images for backend and ml and save it as `city24-backend-core.tar` and `city24-ml-core.tar`.
+It will build docker images for backend and ml and save it as `city24-backend-core.tar`, `city24-frontend-core.tar` and `city24-ml-core.tar`.
 
 # 2. Setup remote
 
