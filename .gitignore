@@ -1,0 +1,9 @@
+ml/
+frontend/
+backend/
+media/
+
+*.tar
+docker-compose.yaml
+
+.idea/

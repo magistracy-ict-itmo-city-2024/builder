@@ -1,0 +1,34 @@
+services:
+  ml:
+    restart: always
+    image: city24-ml-core
+    networks:
+      - city24-network
+    environment:
+      - HUGGINGFACE_TOKEN=
+
+  backend:
+    restart: always
+    image: city24-backend-core
+    ports:
+      - 8080:8080
+      - 8000:8000
+    networks:
+      - city24-network
+    volumes:
+      - ./media:/data/media
+    environment:
+      - JWT_SECRET_ACCESS=
+      - JWT_SECRET_REFRESH=
+      - SPRING_DATASOURCE_PASSWORD=
+      - SPRING_DATASOURCE_URL=
+      - SPRING_DATASOURCE_USERNAME=
+
+  frontend:
+    restart: always
+    image: city24-frontend-core
+    ports:
+      - 8090:80
+
+networks:
+  city24-network:
